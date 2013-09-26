@@ -1,0 +1,15 @@
+[user]
+	name = Savant Krishna
+	email = savant.2020@gmail.com
+[alias]
+	st = status
+    br = branch
+[color]
+	ui = auto
+[http]
+    proxy = http://sk.savant:iitbee&2011@netmon.iitb.ac.in:80
+[core]
+    gitproxy = gitproxy
+[alias]
+      report = "log --author=Savant --since='1 sunday ago' --until='now' --format='%Cgreen%ci%Creset %s%Creset' --no-merges"
+      lastreport = "log --author=Savant --since='2 sunday ago' --until='1 sunday ago' --format='%Cgreen%ci%Creset %s%Creset' --no-merges"

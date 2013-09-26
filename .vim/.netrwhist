@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/media/savant/DATA/home/misc/repos/pblog/import/savantsk.blogspot.in'
+let g:netrw_dirhist_2='/media/savant/DATA/home/misc/repos/pblog/import/importall.sh'
+let g:netrw_dirhist_3='/home/savant/hydro_ws/src/robosub/auv_debug'
+let g:netrw_dirhist_4='/home/savant/hydro_ws/src/robosub/matsya_gazebo'
+let g:netrw_dirhist_5='/home/savant/hydro_ws/src/robosub/matsya_gazebo/build'
+let g:netrw_dirhist_6='/home/savant/hydro_ws/src/robosub/auv_debug/environment'
+let g:netrw_dirhist_7='/home/savant/hydro_ws/src/robosub/auv_hw_comm/src/hyd_comm/serialization'
+let g:netrw_dirhist_8='/home/savant/hydro_ws/src/robosub/auv_hw_comm'
