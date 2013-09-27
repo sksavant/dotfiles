@@ -175,7 +175,15 @@ catkin_make_new(){
     cd $x;
 }
 alias catkin_make="catkin_make_new"
-alias catkin_make_isolated="x=$(pwd); cd ~/hydro_ws ; catkin_make_isolated $@ ; cd $x"
+catkin_make_isolated_new(){
+    x=$(pwd);
+    cd ~/hydro_ws ; 
+    y="$@";
+    echo $y;
+    catkin_make_isolated "$@" ;
+    cd $x;
+}
+alias catkin_make_isolated="catkin_make_isolated_new"
 alias cmclean="x=$(pwd); cd ~/hydro_ws/; rm build/ devel/; cd $x;"
 alias cmiclean="x=$(pwd); cd ~/hydro_ws/; rm build_isolated/ devel_isolated/; cd $x;"
 export mdpath=$(rospack find matsya_description)

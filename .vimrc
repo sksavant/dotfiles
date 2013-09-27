@@ -55,10 +55,5 @@ if has("autocmd")
 "neobundle(https://github.com/Shougo/neobundle.vim.git)
 set nocompatible              " Be Improved
 filetype off                  " Required!
-if has('vim_starting')
-  set rtp+=~/.vim/neobundle.vim/
-endif
-call neobundle#rc(expand('~/.vim/bundle/'))
 
-NeoBundle "ompugao/ros.vim"
 filetype plugin indent on
