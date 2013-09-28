@@ -149,9 +149,9 @@ alias rswp="find . -name ".*.sw*" -print0 | xargs -0 rm -r"
 #alias rswp="rm `find ./ -name '.*.sw*'`"
 alias r="cd $repos"
 gitpushall(){
-    git push gh $1
-    git push origin $1
-    git push sharada $1
+    git push gh $@
+    git push origin $@
+    git push sharada $@
 }
 alias gp=gitpushall
 alias du="du --summarize -BM"
@@ -173,6 +173,13 @@ catkin_make_new(){
     echo $y;
     catkin_make "$@" ;
     cd $x;
+}
+function repeat(){
+    while true; do
+        $@;
+        sleep 1;
+        echo ---;
+    done
 }
 alias catkin_make="catkin_make_new"
 catkin_make_isolated_new(){
