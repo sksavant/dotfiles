@@ -110,7 +110,7 @@ export PS1='\[$(tput setaf 3)\]\u@\h:\[$(tput sgr0)$(tput setaf 1)\]\w\[$(tput s
 ulimit -c unlimited
 export http_proxy=http://"sk.savant:iitbee&2011@netmon.iitb.ac.in:80/"
 export https_proxy=https://"sk.savant:iitbee&2011@netmon.iitb.ac.in:80"
-export PATH=$PATH:/home/savant/.installs/mendeleydesktop-1.8.4-linux-x86_64/bin
+export PATH=$PATH:/home/savant/.installs/mendeleydesktop-1.8.4-linux-x86_64/bin:/media/savant/DATA/home/installs/sml/bin
 #export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 #export PATH=/usr/local/bin:$PATH
 #export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
@@ -119,6 +119,7 @@ export PATH=$PATH:/home/savant/.installs/mendeleydesktop-1.8.4-linux-x86_64/bin
 #source /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/setup.bash
 # Fuerte
 #source /media/savant/DATA/ros-workspace/setup.bash
+#source /home/savant/ros-workspace/setup.bash
 
 ## Hydro
 source /opt/ros/hydro/setup.bash
@@ -170,7 +171,7 @@ catkin_make_new(){
     x=$(pwd);
     cd ~/hydro_ws ; 
     y="$@";
-    echo $y;
+    #echo $y;
     catkin_make "$@" ;
     cd $x;
 }
@@ -181,7 +182,7 @@ function repeat(){
         echo ---;
     done
 }
-alias catkin_make="catkin_make_new"
+alias cm="catkin_make_new"
 catkin_make_isolated_new(){
     x=$(pwd);
     cd ~/hydro_ws ; 
@@ -191,8 +192,11 @@ catkin_make_isolated_new(){
     cd $x;
 }
 alias catkin_make_isolated="catkin_make_isolated_new"
-alias cmclean="x=$(pwd); cd ~/hydro_ws/; rm build/ devel/; cd $x;"
-alias cmiclean="x=$(pwd); cd ~/hydro_ws/; rm build_isolated/ devel_isolated/; cd $x;"
+alias cmclean="x=$(pwd); cd ~/hydro_ws/; rm build/ devel/; cd $x"
+alias cmiclean="x=$(pwd); cd ~/hydro_ws/; rm build_isolated/ devel_isolated/; cd $x"
 export mdpath=$(rospack find matsya_description)
 export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:$mdpath/urdf/robots/
 export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:$(roscd;pwd)/lib
+alias tcstart="javaws /home/savant/.installs/ContestAppletProd.jnlp"
+alias robosubmake="cm --pkg auv_msgs; cm"
+alias robosubmakepreclean="cmclean; sleep 1; cm --pkg auv_msgs; cm; "
