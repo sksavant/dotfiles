@@ -129,32 +129,6 @@ export PATH=$PATH:/home/savant/ros_workspace/robosub/utils
 export PATH=$PATH:/media/savant/DATA/home/misc/repos/todo-py:/media/savant/DATA/home/installs/matlab/bin:/media/savant/DATA/home/Acads/BTP/Android/adt-bundle-linux-x86_64-20130729/eclipse/
 #rospack profile 1>/dev/null
 export EDITOR=$(which vim)
-export repos=/media/savant/DATA/home/misc/repos
-export myhome=/media/savant/DATA/home
-alias b="cd /media/savant/DATA/home/Acads/BTP/"
-alias h="cd $myhome"
-alias a="cd $myhome/Acads/"
-alias gr="grep -r"
-alias pandasync="rsync -rv /media/savant/DATA/home/misc/ panda:misc/"
-alias j="jobs"
-alias kz="kill %%"
-alias cpuinfo='while true; do cat /proc/cpuinfo  | grep MHz; echo === ; sleep 1; done ;'
-alias rm='/usr/bin/trashit'
-alias make="make -j4"
-alias infimake='while true; do make; echo === ; sleep 30; done ;'
-alias noprompt="export PS1='>'"
-alias gk='gitk --all'
-alias tin="terminator -l intern"
-alias rswp="find . -name ".*.sw*" -print0 | xargs -0 rm -r"
-#alias rswp="rm `find ./ -name '.*.sw*'`"
-alias r="cd $repos"
-gitpushall(){
-    git push gh $@
-    git push origin $@
-    git push sharada $@
-}
-alias gp=gitpushall
-alias du="du --summarize -BM"
 function mdview(){
     if [ +$1 != "+" ]; then
         markdown2 $1  > $1.html;
@@ -173,15 +147,6 @@ function rstview(){
         echo "Give a file name"
     fi
 }
-alias skd="ssh vm-0.sksavant.koding.kd.io -v"
-catkin_make_new(){
-    x=$(pwd);
-    cd ~/hydro_ws ; 
-    y="$@";
-    #echo $y;
-    catkin_make "$@" ;
-    cd $x;
-}
 function repeat(){
     while true; do
         $@;
@@ -189,21 +154,6 @@ function repeat(){
         echo ---;
     done
 }
-alias cm="catkin_make_new"
-catkin_make_isolated_new(){
-    x=$(pwd);
-    cd ~/hydro_ws ; 
-    y="$@";
-    echo $y;
-    catkin_make_isolated "$@" ;
-    cd $x;
-}
-alias catkin_make_isolated="catkin_make_isolated_new"
-alias cmclean="x=$(pwd); cd ~/hydro_ws/; rm build/ devel/; cd $x"
-alias cmiclean="x=$(pwd); cd ~/hydro_ws/; rm build_isolated/ devel_isolated/; cd $x"
 export mdpath=$(rospack find matsya_description)
 export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:$mdpath/urdf/robots/
 export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:$(roscd;pwd)/lib
-alias tcstart="javaws /home/savant/.installs/ContestAppletProd.jnlp"
-alias robosubmake="cm --pkg auv_msgs; cm"
-alias robosubmakepreclean="cmclean; sleep 1; cm --pkg auv_msgs; cm; "
