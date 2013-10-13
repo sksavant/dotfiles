@@ -156,14 +156,22 @@ gitpushall(){
 alias gp=gitpushall
 alias du="du --summarize -BM"
 function mdview(){
-    markdown2 $1  > $1.html;
-    sensible-browser $1.html;
-    rm $1.html
+    if [ +$1 != "+" ]; then
+        markdown2 $1  > $1.html;
+        sensible-browser $1.html;
+        rm $1.html
+    else
+        echo "Give a file name"
+    fi
 }
 function rstview(){
-    rst2html $1 > $1.html;
-    sensible-browser $1.html;
-    rm $1.html
+    if [ +$1 != "+" ]; then
+        rst2html $1 > $1.html;
+        sensible-browser $1.html;
+        rm $1.html
+    else
+        echo "Give a file name"
+    fi
 }
 alias skd="ssh vm-0.sksavant.koding.kd.io -v"
 catkin_make_new(){
