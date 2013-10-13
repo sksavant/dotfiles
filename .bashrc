@@ -105,11 +105,10 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+. .bash_proxy
 #source /home/savant/ros_workspace/setup.bash
 export PS1='\[$(tput setaf 3)\]\u@\h:\[$(tput sgr0)$(tput setaf 1)\]\w\[$(tput sgr0)$(tput setaf 2)\] $(__git_ps1 "[%s]") \[$(tput sgr0)\]$ '
 ulimit -c unlimited
-export http_proxy=http://"sk.savant:iitbee&2011@netmon.iitb.ac.in:80/"
-export https_proxy=https://"sk.savant:iitbee&2011@netmon.iitb.ac.in:80"
 export PATH=$PATH:/home/savant/.installs/mendeleydesktop-1.8.4-linux-x86_64/bin:/media/savant/DATA/home/installs/sml/bin
 #export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 #export PATH=/usr/local/bin:$PATH
