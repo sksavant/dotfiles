@@ -105,7 +105,7 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-. .bash_proxy
+. ~/.bash_proxy
 #source /home/savant/ros_workspace/setup.bash
 export PS1='\[$(tput setaf 3)\]\u@\h:\[$(tput sgr0)$(tput setaf 1)\]\w\[$(tput sgr0)$(tput setaf 2)\] $(__git_ps1 "[%s]") \[$(tput sgr0)\]$ '
 ulimit -c unlimited
@@ -121,7 +121,7 @@ export PATH=$PATH:/home/savant/.installs/mendeleydesktop-1.8.4-linux-x86_64/bin:
 #source /home/savant/ros-workspace/setup.bash
 
 ## Hydro
-source /opt/ros/hydro/setup.bash
+#source /opt/ros/hydro/setup.bash
 source ~/hydro_ws/devel/setup.bash
 
 export PATH=$PATH:/home/savant/.bin/
