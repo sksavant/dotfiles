@@ -121,7 +121,7 @@ export PATH=$PATH:/home/savant/.installs/mendeleydesktop-1.8.4-linux-x86_64/bin:
 #source /home/savant/ros-workspace/setup.bash
 
 ## Hydro
-#source /opt/ros/hydro/setup.bash
+source /opt/ros/hydro/setup.bash
 source ~/hydro_ws/devel/setup.bash
 
 export PATH=$PATH:/home/savant/.bin/
@@ -155,5 +155,9 @@ function repeat(){
     done
 }
 export mdpath=$(rospack find matsya_description)
-export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:$mdpath/urdf/robots/
-export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:$(roscd;pwd)/lib
+export mgpath=$(rospack find matsya_gazebo)
+#export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:$mdpath/urdf/robots/
+#export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:$(roscd;pwd)/lib
+export GAZEBO_MODEL_PATH=$mdpath/urdf/robots/:$mgpath/models/
+export GAZEBO_PLUGIN_PATH=$(roscd;pwd)/lib
+. ~/.bash_startup

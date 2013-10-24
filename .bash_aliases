@@ -49,7 +49,15 @@ catkin_make_isolated_new(){
 alias catkin_make_isolated="catkin_make_isolated_new"
 alias cmclean="x=$(pwd); cd ~/hydro_ws/; rm build/ devel/; cd $x"
 alias cmiclean="x=$(pwd); cd ~/hydro_ws/; rm build_isolated/ devel_isolated/; cd $x"
+ci(){
+    touch ./$@/CATKIN_IGNORE;
+}
+cni(){
+    touch ./$@/CATKIN_IGNORE;
+}
 
 alias tcstart="javaws /home/savant/.installs/ContestAppletProd.jnlp"
 alias robosubmake="cm --pkg auv_msgs; cm"
 alias robosubmakepreclean="cmclean; sleep 1; cm --pkg auv_msgs; cm; "
+
+alias flask-hamster=/media/savant/DATA/home/misc/repos/installed_repos/flask-hamster/flask-hamster.py
