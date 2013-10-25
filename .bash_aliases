@@ -50,10 +50,14 @@ alias catkin_make_isolated="catkin_make_isolated_new"
 alias cmclean="x=$(pwd); cd ~/hydro_ws/; rm build/ devel/; cd $x"
 alias cmiclean="x=$(pwd); cd ~/hydro_ws/; rm build_isolated/ devel_isolated/; cd $x"
 ci(){
-    touch ./$@/CATKIN_IGNORE;
+    for d in "$@"; do
+        touch $d/CATKIN_IGNORE
+    done
 }
 cni(){
-    touch ./$@/CATKIN_IGNORE;
+    for d in $@; do
+        rm $d/CATKIN_IGNORE;
+    done
 }
 
 alias tcstart="javaws /home/savant/.installs/ContestAppletProd.jnlp"
