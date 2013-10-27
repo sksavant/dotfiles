@@ -122,7 +122,7 @@ export PATH=$PATH:/home/savant/.installs/mendeleydesktop-1.8.4-linux-x86_64/bin:
 
 ## Hydro
 source /opt/ros/hydro/setup.bash
-source ~/hydro_ws/devel/setup.bash
+source ~/catkin_ws/devel/setup.bash
 
 export PATH=$PATH:/home/savant/.bin/
 export PATH=$PATH:/home/savant/ros_workspace/robosub/utils

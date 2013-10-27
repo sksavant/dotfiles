@@ -18,6 +18,7 @@ alias tin="terminator -l intern"
 alias rswp="find . -name ".*.sw*" -print0 | xargs -0 rm -r"
 #alias rswp="rm `find ./ -name '.*.sw*'`"
 alias r="cd $repos"
+alias m="roscd; cd ../src/robosub/;"
 
 gitpushall(){
     git push gh $@
@@ -29,39 +30,9 @@ alias du="du --summarize -BM"
 
 alias skd="ssh vm-0.sksavant.koding.kd.io -v"
 
-catkin_make_new(){
-    x=$(pwd);
-    cd ~/hydro_ws ; 
-    y="$@";
-    #echo $y;
-    catkin_make "$@" ;
-    cd $x;
-}
-alias cm="catkin_make_new"
-catkin_make_isolated_new(){
-    x=$(pwd);
-    cd ~/hydro_ws ; 
-    y="$@";
-    echo $y;
-    catkin_make_isolated "$@" ;
-    cd $x;
-}
-alias catkin_make_isolated="catkin_make_isolated_new"
-alias cmclean="x=$(pwd); cd ~/hydro_ws/; rm build/ devel/; cd $x"
-alias cmiclean="x=$(pwd); cd ~/hydro_ws/; rm build_isolated/ devel_isolated/; cd $x"
-ci(){
-    for d in "$@"; do
-        touch $d/CATKIN_IGNORE
-    done
-}
-cni(){
-    for d in $@; do
-        rm $d/CATKIN_IGNORE;
-    done
-}
-
 alias tcstart="javaws /home/savant/.installs/ContestAppletProd.jnlp"
-alias robosubmake="cm --pkg auv_msgs; cm"
-alias robosubmakepreclean="cmclean; sleep 1; cm --pkg auv_msgs; cm; "
 
 alias flask-hamster=/media/savant/DATA/home/misc/repos/installed_repos/flask-hamster/flask-hamster.py
+alias resetresolvconf="sudo echo 'nameserver 10.200.1.11' >/etc/resolv.conf"
+. ~/catkin_ws/src/robosub/.robosub_aliases
+. ~/catkin_ws/src/robosub/.robosub_bash
