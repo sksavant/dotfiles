@@ -6,8 +6,6 @@
     br = branch
 [color]
 	ui = auto
-[http]
-    proxy = http://sk.savant:iitbee&2011@netmon.iitb.ac.in:80
 [core]
     gitproxy = gitproxy
 [alias]
