@@ -36,7 +36,6 @@ fi
 case "$TERM" in
     xterm-color) color_prompt=yes;;
 esac
-
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
@@ -95,6 +94,19 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
+# Fuerte
+#source /media/savant/DATA/ros-workspace/setup.bash
+#source /home/savant/ros-workspace/setup.bash
+
+## Groovy
+source /opt/ros/groovy/setup.bash
+source ~/groovy-ws/devel/setup.bash
+
+## Hydro
+#source /opt/ros/hydro/setup.bash
+#source ~/catkin_ws/devel/setup.bash
+
+
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -116,13 +128,6 @@ export PATH=$PATH:/home/savant/.installs/mendeleydesktop-1.8.4-linux-x86_64/bin:
 #source /usr/local/share/gazebo/setup.sh
 #source /usr/share/gazebo/setup.sh
 #source /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/setup.bash
-# Fuerte
-#source /media/savant/DATA/ros-workspace/setup.bash
-#source /home/savant/ros-workspace/setup.bash
-
-## Hydro
-source /opt/ros/hydro/setup.bash
-source ~/catkin_ws/devel/setup.bash
 
 export PATH=$PATH:/home/savant/.bin/
 export PATH=$PATH:/home/savant/ros_workspace/robosub/utils
@@ -154,8 +159,8 @@ function repeat(){
         echo ---;
     done
 }
-export mdpath=$(rospack find matsya_description)
-export mgpath=$(rospack find matsya_gazebo)
+export mdpath=$(rospack find matsya_description 2>/dev/null) &
+export mgpath=$(rospack find matsya_gazebo 2>/dev/null) &
 #export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:$mdpath/urdf/robots/
 #export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:$(roscd;pwd)/lib
 export GAZEBO_MODEL_PATH=$mdpath/urdf/robots/:$mgpath/models/

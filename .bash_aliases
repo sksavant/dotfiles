@@ -36,3 +36,10 @@ alias flask-hamster=/media/savant/DATA/home/misc/repos/installed_repos/flask-ham
 alias resetresolvconf="sudo echo 'nameserver 10.200.1.11' >/etc/resolv.conf"
 . ~/catkin_ws/src/robosub/.robosub_aliases
 . ~/catkin_ws/src/robosub/.robosub_bash
+
+lc(){
+    cat $@ | wc -l
+}
+mkgit(){
+    mkdir -p $1 && cd $1 && git init
+}
