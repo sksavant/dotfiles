@@ -166,3 +166,7 @@ export mgpath=$(rospack find matsya_gazebo 2>/dev/null) &
 export GAZEBO_MODEL_PATH=$mdpath/urdf/robots/:$mgpath/models/
 export GAZEBO_PLUGIN_PATH=$(roscd;pwd)/lib
 . ~/.bash_startup
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/lib64/pkgconfig:/usr/local/lib"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib64:/usr/local/lib"
+export PLAYERPATH="/usr/local/lib64:/usr/local/lib"
+export STAGEPATH="/usr/local/lib64:/usr/local/lib"
