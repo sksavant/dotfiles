@@ -94,17 +94,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-# Fuerte
-#source /media/savant/DATA/ros-workspace/setup.bash
-#source /home/savant/ros-workspace/setup.bash
-
-## Groovy
-source /opt/ros/groovy/setup.bash
-source ~/groovy-ws/devel/setup.bash
-
-## Hydro
-#source /opt/ros/hydro/setup.bash
-#source ~/catkin_ws/devel/setup.bash
+source .rosdistro
 
 
 if [ -f ~/.bash_aliases ]; then
