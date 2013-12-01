@@ -43,3 +43,21 @@ lc(){
 mkgit(){
     mkdir -p $1 && cd $1 && git init
 }
+
+change_distro(){
+    if [ "+$1" = "+fuerte" ]; then
+        source /media/savant/DATA/ros-workspace/setup.bash;
+        source /home/savant/ros-workspace/setup.bash;
+        echo $1 > $HOME/.rosdistro
+    fi
+    if [ "+$1" = "+groovy" ]; then
+        source /opt/ros/groovy/setup.bash;
+        source ~/groovy-ws/devel/setup.bash;
+        echo $1 > $HOME/.rosdistro
+    fi
+    if [ "+$1" = "+hydro" ]; then
+        source /opt/ros/hydro/setup.bash;
+        source ~/catkin_ws/devel/setup.bash;
+        echo $1 > $HOME/.rosdistro
+    fi
+}
