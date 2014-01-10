@@ -160,3 +160,5 @@ export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/lib64/pkgconfig:/usr/local/l
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib64:/usr/local/lib"
 export PLAYERPATH="/usr/local/lib64:/usr/local/lib"
 export STAGEPATH="/usr/local/lib64:/usr/local/lib"
+alias android-connect="mtpfs -o allow_other /media/Nexus7"
+alias android-disconnect="fusermount -u /media/Nexus7"
