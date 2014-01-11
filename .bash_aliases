@@ -1,7 +1,7 @@
 
-export repos=/media/savant/DATA/home/misc/repos
-export myhome=/media/savant/DATA/home
-alias b="cd /media/savant/DATA/home/Acads/BTP/"
+export repos=/media/DATA/home/repos
+export myhome=/media/DATA/home
+alias b="cd /media/DATA/home/Acads/BTP/"
 alias h="cd $myhome"
 alias a="cd $myhome/Acads/"
 alias gr="grep -r"
@@ -34,8 +34,6 @@ alias tcstart="javaws /home/savant/.installs/ContestAppletProd.jnlp"
 
 alias flask-hamster=/media/savant/DATA/home/misc/repos/installed_repos/flask-hamster/flask-hamster.py
 alias resetresolvconf="sudo echo 'nameserver 10.200.1.11' >/etc/resolv.conf"
-. ~/catkin_ws/src/robosub/.robosub_aliases
-. ~/catkin_ws/src/robosub/.robosub_bash
 
 lc(){
     cat $@ | wc -l

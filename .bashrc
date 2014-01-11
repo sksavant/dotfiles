@@ -149,12 +149,12 @@ function repeat(){
         echo ---;
     done
 }
-export mdpath=$(rospack find matsya_description 2>/dev/null) &
-export mgpath=$(rospack find matsya_gazebo 2>/dev/null) &
+#export mdpath=$(rospack find matsya_description 2>/dev/null) &
+#export mgpath=$(rospack find matsya_gazebo 2>/dev/null) &
 #export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:$mdpath/urdf/robots/
 #export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:$(roscd;pwd)/lib
-export GAZEBO_MODEL_PATH=$mdpath/urdf/robots/:$mgpath/models/
-export GAZEBO_PLUGIN_PATH=$(roscd;pwd)/lib
+#export GAZEBO_MODEL_PATH=$mdpath/urdf/robots/:$mgpath/models/
+#export GAZEBO_PLUGIN_PATH=$(roscd;pwd)/lib
 . ~/.bash_startup
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/lib64/pkgconfig:/usr/local/lib"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib64:/usr/local/lib"
@@ -162,3 +162,5 @@ export PLAYERPATH="/usr/local/lib64:/usr/local/lib"
 export STAGEPATH="/usr/local/lib64:/usr/local/lib"
 alias android-connect="mtpfs -o allow_other /media/Nexus7"
 alias android-disconnect="fusermount -u /media/Nexus7"
+. ~/catkin_ws/src/robosub/.robosub_aliases
+. ~/catkin_ws/src/robosub/.robosub_bash
