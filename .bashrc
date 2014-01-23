@@ -119,7 +119,7 @@ export PATH=$PATH:/home/savant/.installs/mendeleydesktop-1.8.4-linux-x86_64/bin:
 #source /usr/share/gazebo/setup.sh
 #source /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/setup.bash
 
-export PATH=$PATH:/home/savant/.bin/
+export PATH=$PATH:/home/savant/.bin/:/home/savant/.install/bin
 export PATH=$PATH:/home/savant/ros_workspace/robosub/utils
 export PATH=$PATH:/media/savant/DATA/home/misc/repos/todo-py:/media/savant/DATA/home/installs/matlab/bin:/media/savant/DATA/home/Acads/BTP/Android/adt-bundle-linux-x86_64-20130729/eclipse/
 #rospack profile 1>/dev/null
@@ -157,10 +157,11 @@ function repeat(){
 #export GAZEBO_PLUGIN_PATH=$(roscd;pwd)/lib
 . ~/.bash_startup
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/lib64/pkgconfig:/usr/local/lib"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib64:/usr/local/lib"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib64:/usr/local/lib:/home/savant/.install/lib"
 export PLAYERPATH="/usr/local/lib64:/usr/local/lib"
 export STAGEPATH="/usr/local/lib64:/usr/local/lib"
 alias android-connect="mtpfs -o allow_other /media/Nexus7"
 alias android-disconnect="fusermount -u /media/Nexus7"
 . ~/catkin_ws/src/robosub/.robosub_aliases
 . ~/catkin_ws/src/robosub/.robosub_bash
+export MORSE_BLENDER="/media/DATA/home/installs/blender-2.69-linux-glibc211-x86_64/blender"

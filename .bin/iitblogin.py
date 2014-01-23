@@ -55,6 +55,8 @@ class IITBLogin:
             if argv[1]=="logout":
                 l.logout()
                 return
+            elif argv[1] in "relogin":
+                l.logout()
         l.login()
 
 if __name__=="__main__":
