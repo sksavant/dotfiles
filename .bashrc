@@ -165,3 +165,4 @@ alias android-disconnect="fusermount -u /media/Nexus7"
 . ~/catkin_ws/src/robosub/.robosub_aliases
 . ~/catkin_ws/src/robosub/.robosub_bash
 export MORSE_BLENDER="/media/DATA/home/installs/blender-2.69-linux-glibc211-x86_64/blender"
+export PATH="$PATH:/media/DATA/home/installs/blender-2.69-linux-glibc211-x86_64/"

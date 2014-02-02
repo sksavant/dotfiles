@@ -59,3 +59,14 @@ change_distro(){
         echo $1 > $HOME/.rosdistro
     fi
 }
+convertMTS(){
+    for f in $@; do
+        mencoder $f -o ${f:r}.avi -oac copy -ovc lavc -lavcopts vcodec=mpeg4:vbitrate=10000 -fps 50 -vf scale=1920:1080;
+    done;
+}
+batchresize(){
+    for f in $@; do
+        echo "Resizing $f";
+        image-resize.py $f;
+    done;
+}
