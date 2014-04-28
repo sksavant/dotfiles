@@ -1,5 +1,6 @@
 
 export repos=/media/DATA/home/repos
+export local_repos=/media/DATA_HDD/home/repos
 export myhome=/media/DATA/home
 alias b="cd /media/DATA/home/Acads/BTP/"
 alias h="cd $myhome"
@@ -17,7 +18,7 @@ alias gk='gitk --all'
 alias tin="terminator -l intern"
 alias rswp="find . -name ".*.sw*" -print0 | xargs -0 rm -r"
 #alias rswp="rm `find ./ -name '.*.sw*'`"
-alias r="cd $repos"
+alias r="cd $local_repos; cd $repos"
 alias m="roscd; cd ../src/robosub/;"
 
 gitpushall(){

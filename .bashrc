@@ -111,7 +111,7 @@ fi
 #source /home/savant/ros_workspace/setup.bash
 export PS1='\[$(tput setaf 3)\]\u@\h:\[$(tput sgr0)$(tput setaf 1)\]\w\[$(tput sgr0)$(tput setaf 2)\] $(__git_ps1 "[%s]") \[$(tput sgr0)\]$ '
 ulimit -c unlimited
-export PATH=$PATH:/home/savant/.installs/mendeleydesktop-1.8.4-linux-x86_64/bin:/media/savant/DATA/home/installs/sml/bin
+export PATH=$PATH:/home/savant/.installs/mendeleydesktop-1.11-linux-x86_64/bin:/media/savant/DATA/home/installs/sml/bin
 #export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 #export PATH=/usr/local/bin:$PATH
 #export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
