@@ -57,3 +57,4 @@ set nocompatible              " Be Improved
 filetype off                  " Required!
 
 filetype plugin indent on
+colorscheme default

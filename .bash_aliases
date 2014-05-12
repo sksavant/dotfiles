@@ -1,6 +1,6 @@
 
-export repos=/media/DATA/home/repos
-export local_repos=/media/DATA_HDD/home/repos
+export repos=/media/DATA/repos
+export local_repos=/media/DATA_HDD/repos
 export myhome=/media/DATA/home
 alias b="cd /media/DATA/home/Acads/BTP/"
 alias h="cd $myhome"

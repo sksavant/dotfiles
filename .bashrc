@@ -111,7 +111,7 @@ fi
 #source /home/savant/ros_workspace/setup.bash
 export PS1='\[$(tput setaf 3)\]\u@\h:\[$(tput sgr0)$(tput setaf 1)\]\w\[$(tput sgr0)$(tput setaf 2)\] $(__git_ps1 "[%s]") \[$(tput sgr0)\]$ '
 ulimit -c unlimited
-export PATH=$PATH:/home/savant/.installs/mendeleydesktop-1.11-linux-x86_64/bin:/media/savant/DATA/home/installs/sml/bin
+export PATH=$PATH:/home/savant/.installs/mendeleydesktop-1.11-linux-x86_64/bin:/media/savant/DATA/home/installs/sml/bin:/home/savant/.installs/genymotion/
 #export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 #export PATH=/usr/local/bin:$PATH
 #export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
@@ -121,7 +121,7 @@ export PATH=$PATH:/home/savant/.installs/mendeleydesktop-1.11-linux-x86_64/bin:/
 
 export PATH=$PATH:/home/savant/.bin/:/home/savant/.install/bin
 export PATH=$PATH:/home/savant/ros_workspace/robosub/utils
-export PATH=$PATH:/media/savant/DATA/home/misc/repos/todo-py:/media/savant/DATA/home/installs/matlab/bin:/media/savant/DATA/home/Acads/BTP/Android/adt-bundle-linux-x86_64-20130729/eclipse/
+export PATH=$PATH:/media/savant/DATA/home/misc/repos/todo-py:/media/savant/DATA/home/installs/matlab/bin:/media/DATA_HDD/installs/adt-bundle-linux-x86_64-20140321/eclipse/
 #rospack profile 1>/dev/null
 export EDITOR=$(which vim)
 function mdview(){
@@ -166,3 +166,17 @@ alias android-disconnect="fusermount -u /media/Nexus7"
 . ~/catkin_ws/src/robosub/.robosub_bash
 export MORSE_BLENDER="/media/DATA/home/installs/blender-2.69-linux-glibc211-x86_64/blender"
 export PATH="$PATH:/media/DATA/home/installs/blender-2.69-linux-glibc211-x86_64/"
+export WORKON_HOME="$HOME/.venvs/"
+source /usr/local/bin/virtualenvwrapper.sh
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+source /home/savant/.installs/google-cloud-sdk/path.bash.inc
+
+# The next line enables bash completion for gcloud.
+source /home/savant/.installs/google-cloud-sdk/completion.bash.inc
+export PATH=$PATH:/usr/local/cuda-6.0/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-6.0/lib64
+export CUDA_ROOT=/usr/local/cuda-6.0
