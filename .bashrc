@@ -99,7 +99,9 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 ros_dist=$(cat $HOME/.rosdistro)
-change_distro $ros_dist
+#change_distro $ros_dist
+#. ~/catkin_ws/src/robosub/.robosub_aliases
+#. ~/catkin_ws/src/robosub/.robosub_bash
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -119,7 +121,7 @@ export PATH=$PATH:/home/savant/.installs/mendeleydesktop-1.11-linux-x86_64/bin:/
 #source /usr/share/gazebo/setup.sh
 #source /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/setup.bash
 
-export PATH=$PATH:/home/savant/.bin/:/home/savant/.install/bin
+export PATH=$PATH:/home/savant/.bin/:/home/savant/.installs/bin
 export PATH=$PATH:/home/savant/ros_workspace/robosub/utils
 export PATH=$PATH:/media/savant/DATA/home/misc/repos/todo-py:/media/savant/DATA/home/installs/matlab/bin:/media/DATA_HDD/installs/adt-bundle-linux-x86_64-20140321/eclipse/
 #rospack profile 1>/dev/null
@@ -157,13 +159,11 @@ function repeat(){
 #export GAZEBO_PLUGIN_PATH=$(roscd;pwd)/lib
 . ~/.bash_startup
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/lib64/pkgconfig:/usr/local/lib"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib64:/usr/local/lib:/home/savant/.install/lib"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib:/usr/local/lib64:/usr/local/lib:/home/savant/.install/lib/"
 export PLAYERPATH="/usr/local/lib64:/usr/local/lib"
 export STAGEPATH="/usr/local/lib64:/usr/local/lib"
 alias android-connect="mtpfs -o allow_other /media/Nexus7"
 alias android-disconnect="fusermount -u /media/Nexus7"
-. ~/catkin_ws/src/robosub/.robosub_aliases
-. ~/catkin_ws/src/robosub/.robosub_bash
 export MORSE_BLENDER="/media/DATA/home/installs/blender-2.69-linux-glibc211-x86_64/blender"
 export PATH="$PATH:/media/DATA/home/installs/blender-2.69-linux-glibc211-x86_64/"
 export WORKON_HOME="$HOME/.venvs/"
@@ -180,3 +180,10 @@ source /home/savant/.installs/google-cloud-sdk/completion.bash.inc
 export PATH=$PATH:/usr/local/cuda-6.0/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-6.0/lib64
 export CUDA_ROOT=/usr/local/cuda-6.0
+source /home/savant/perl5/perlbrew/etc/bashrc
+#export CMAKE_MODULE_PATH="$CMAKE_MODULE_PATH:/home/savant/.install/share/OpenCV"
+#export BOOST_ROOT="$HOME/.install/"
+export BOOST_ROOT="/usr/"
+#export PATH="/media/DATA_HDD/installs/jre1.7.0_67/bin/:$PATH"
+alias strt='date +"%m_%d_%Y-%H_%M_%S"'
+

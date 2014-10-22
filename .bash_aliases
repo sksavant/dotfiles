@@ -18,7 +18,7 @@ alias gk='gitk --all'
 alias tin="terminator -l intern"
 alias rswp="find . -name ".*.sw*" -print0 | xargs -0 rm -r"
 #alias rswp="rm `find ./ -name '.*.sw*'`"
-alias r="cd $local_repos; cd $repos"
+alias r="cd $local_repos;# cd $repos"
 alias m="roscd; cd ../src/robosub/;"
 
 gitpushall(){
@@ -71,3 +71,18 @@ batchresize(){
         image-resize.py $f;
     done;
 }
+
+function cpstat()
+{
+  local pid="${1:-$(pgrep -xn cp)}" src dst
+  [[ "$pid" ]] || return
+  while [[ -f "/proc/$pid/fd/3" ]]; do
+    read src dst < <(stat -L --printf '%s ' "/proc/$pid/fd/"{3,4})
+    (( src )) || break
+    printf 'cp %d%%\r' $((dst*100/src))
+    sleep 1
+  done
+  echo
+}
+alias rpiemulator='qemu-system-arm -kernel kernel-qemu -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1 rootfstype=ext4 rw" -hda $@'
+alias initrpiemul='qemu-system-arm -kernel kernel-qemu -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1 rootfstype=ext4 rw init=/bin/bash" -hda $@'
