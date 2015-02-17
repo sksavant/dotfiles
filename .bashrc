@@ -185,5 +185,6 @@ source /home/savant/perl5/perlbrew/etc/bashrc
 #export BOOST_ROOT="$HOME/.install/"
 export BOOST_ROOT="/usr/"
 #export PATH="/media/DATA_HDD/installs/jre1.7.0_67/bin/:$PATH"
-alias strt='date +"%m_%d_%Y-%H_%M_%S"'
 
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

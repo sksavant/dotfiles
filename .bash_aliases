@@ -86,3 +86,5 @@ function cpstat()
 }
 alias rpiemulator='qemu-system-arm -kernel kernel-qemu -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1 rootfstype=ext4 rw" -hda $@'
 alias initrpiemul='qemu-system-arm -kernel kernel-qemu -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1 rootfstype=ext4 rw init=/bin/bash" -hda $@'
+alias fvim='cd $local_repos/footprints_repos/footprints/; vi src/*/*.cpp include/footprints/*/*.h;'
+alias strt='date +"%m_%d_%Y-%H_%M_%S"'

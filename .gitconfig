@@ -11,6 +11,7 @@
 [alias]
       report = "log --author=Savant --since='1 sunday ago' --until='now' --format='%Cgreen%ci%Creset %s%Creset' --no-merges"
       lastreport = "log --author=Savant --since='2 sunday ago' --until='1 sunday ago' --format='%Cgreen%ci%Creset %s%Creset' --no-merges"
+      co = "checkout"
 [credential]
 	helper = cache --timeout=36000
 [receive]
