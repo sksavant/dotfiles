@@ -1,0 +1,105 @@
+alias hddmount="sudo mount /media/DATA"
+function convert_ogv_mp4()
+{
+  mencoder $1 -of lavf -lavfopts format=mp4 -oac mp3lame -lameopts cbr:br=128 -ovc x264 -x264encopts bitrate=1000 -o $2
+}
+alias fp="nocorrect fp"
+export repos=/media/DATA/repos
+export local_repos=/media/DATA_HDD/repos
+export fp=/media/DATA_HDD/repos/footprints_repos/footprints/
+export myhome=/media/DATA/home
+alias strt='date +"%m_%d_%Y-%H_%M_%S"'
+alias rpiemulator='qemu-system-arm -kernel kernel-qemu -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1 rootfstype=ext4 rw" -hda $@'
+alias initrpiemul='qemu-system-arm -kernel kernel-qemu -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1 rootfstype=ext4 rw init=/bin/bash" -hda $@'
+alias fvim='cd $local_repos/footprints_repos/footprints/; vi src/*/*.cpp include/footprints/*/*.h;'
+alias b="cd /media/DATA/home/Acads/BTP/"
+alias h="cd $myhome"
+alias a="cd $myhome/Acads/"
+alias gr="grep -r"
+alias pandasync="rsync -rv /media/savant/DATA/home/misc/ panda:misc/"
+alias j="jobs"
+alias kz="kill %%"
+alias cpuinfo='while true; do cat /proc/cpuinfo  | grep MHz; echo "===" ; sleep 1; done ;'
+alias rm='/home/savant/.bin/trashit'
+alias make="make -j4"
+alias infimake='while true; do make; echo === ; sleep 30; done ;'
+alias noprompt="export PS1='>'"
+alias gk='gitk --all'
+alias tin="terminator -l intern"
+alias rl="cd $local_repos;"
+function repeat(){
+    while true; do
+        $@;
+        sleep 1;
+        echo ---;
+    done
+}
+return
+alias rswp="find . -name ".*.sw*" -print0 | xargs -0 rm -r"
+#alias rswp="rm `find ./ -name '.*.sw*'`"
+#alias r="cd $local_repos;# cd $repos"
+alias m="roscd; cd ../src/robosub/;"
+
+gitpushall(){
+    git push gh $@
+    git push origin $@
+    git push sharada $@
+}
+alias gp=gitpushall
+alias du="du --summarize -BM"
+
+alias skd="ssh vm-0.sksavant.koding.kd.io -v"
+
+alias tcstart="javaws /home/savant/.installs/ContestAppletProd.jnlp"
+
+alias flask-hamster=/media/savant/DATA/home/misc/repos/installed_repos/flask-hamster/flask-hamster.py
+alias resetresolvconf="sudo echo 'nameserver 10.200.1.11' >/etc/resolv.conf"
+
+lc(){
+    cat $@ | wc -l
+}
+mkgit(){
+    mkdir -p $1 && cd $1 && git init
+}
+
+change_distro(){
+    if [ "+$1" = "+fuerte" ]; then
+        source /media/savant/DATA/ros-workspace/setup.bash;
+        source /home/savant/ros-workspace/setup.bash;
+        echo $1 > $HOME/.rosdistro
+    fi
+    if [ "+$1" = "+groovy" ]; then
+        source /opt/ros/groovy/setup.bash;
+        source ~/groovy-ws/devel/setup.bash;
+        echo $1 > $HOME/.rosdistro
+    fi
+    if [ "+$1" = "+hydro" ]; then
+        source /opt/ros/hydro/setup.bash;
+        source ~/catkin_ws/devel/setup.bash;
+        echo $1 > $HOME/.rosdistro
+    fi
+}
+convertMTS(){
+    for f in $@; do
+        mencoder $f -o ${f:r}.avi -oac copy -ovc lavc -lavcopts vcodec=mpeg4:vbitrate=10000 -fps 50 -vf scale=1920:1080;
+    done;
+}
+batchresize(){
+    for f in $@; do
+        echo "Resizing $f";
+        image-resize.py $f;
+    done;
+}
+
+function cpstat()
+{
+  local pid="${1:-$(pgrep -xn cp)}" src dst
+  [[ "$pid" ]] || return
+  while [[ -f "/proc/$pid/fd/3" ]]; do
+    read src dst < <(stat -L --printf '%s ' "/proc/$pid/fd/"{3,4})
+    (( src )) || break
+    printf 'cp %d%%\r' $((dst*100/src))
+    sleep 1
+  done
+  echo
+}
