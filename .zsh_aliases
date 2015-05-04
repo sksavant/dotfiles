@@ -1,4 +1,8 @@
 alias hddmount="sudo mount /media/DATA"
+alias mount_home="sudo mount -t ecryptfs /media/savant/f913d12d-de5b-480a-89a4-14df10b9cef3/home/.ecryptfs/savant/.Private/ /media/savant/home/"
+alias underscorify_dirs='find -name "* *" -type d | rename "s/ /_/g"'
+alias underscorify='find -name "* *" -type f | rename "s/ /_/g"'
+
 function convert_ogv_mp4()
 {
   mencoder $1 -of lavf -lavfopts format=mp4 -oac mp3lame -lameopts cbr:br=128 -ovc x264 -x264encopts bitrate=1000 -o $2
@@ -7,15 +11,15 @@ alias fp="nocorrect fp"
 export repos=/media/DATA/repos
 export local_repos=/media/DATA_HDD/repos
 export fp=/media/DATA_HDD/repos/footprints_repos/footprints/
-export myhome=/media/DATA/home
+export myhome=/media/DATA_HDD/home
 alias strt='date +"%m_%d_%Y-%H_%M_%S"'
 alias rpiemulator='qemu-system-arm -kernel kernel-qemu -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1 rootfstype=ext4 rw" -hda $@'
 alias initrpiemul='qemu-system-arm -kernel kernel-qemu -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append "root=/dev/sda2 panic=1 rootfstype=ext4 rw init=/bin/bash" -hda $@'
-alias fvim='cd $local_repos/footprints_repos/footprints/; vi src/*/*.cpp include/footprints/*/*.h;'
+alias fvim='cd $local_repos/footprints_repos/footprints/; vi src/*/*.cpp include/footprints/*/*.h test/include/*.h test/src/*.cpp;'
 alias b="cd /media/DATA/home/Acads/BTP/"
 alias h="cd $myhome"
 alias a="cd $myhome/Acads/"
-alias gr="grep -r"
+alias gr="grep "
 alias pandasync="rsync -rv /media/savant/DATA/home/misc/ panda:misc/"
 alias j="jobs"
 alias kz="kill %%"

@@ -60,4 +60,4 @@ filetype plugin indent on
 colorscheme default
 
 map fb <Esc>:FufBuffer<CR>
-map 4s <Esc>:vsplit<CR><C-l>:split<CR><C-h>:split<CR>
+map 4s <Esc>:vsplit<CR><C-l>:split<CR><C-h>:split<CR><C-l>:vsplit<CR>

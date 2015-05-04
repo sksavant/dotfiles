@@ -188,3 +188,4 @@ export BOOST_ROOT="/usr/"
 
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:/media/DATA_HDD/installs/go/bin"
